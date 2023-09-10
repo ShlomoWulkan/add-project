@@ -10,23 +10,27 @@
         <input type="text" id="first">
         <label for="">+</label>
         <input type="text" id="second">
-        <label for=""><button id="sum">=</button></label>
-        <label id="show"></label>
+        <label for=""><button type="button" id="sum">=</button></label>
+        <span id="show"></span>
 
     </form>
     <script>
-        let sum = 0
+        // let sum = 0
         const ans = document.getElementById("sum")
-        const first = document.getElementById("first")
-        const sec = document.getElementById("second")
+        // const first = document.getElementById("first").value;
+        // const sec = document.getElementById("second").value;
         const show = document.getElementById("show")
-        function add(){
-           sum += first
-           sum += sec 
-           show.append(sum)
-        }
-        ans.addEventListener("click", add)
+    function add_number() {
+      const first_number = parseFloat(document.getElementById("first").value);
+      if (isNaN(first_number)) first_number = 0;
+      const second_number = parseFloat(document.getElementById("second").value);
+      if (isNaN(second_number)) second_number = 0;
+      let result = first_number + second_number;
+      document.getElementById("sum").value = result;
+      show.append(result)
+    }
         
+        ans.addEventListener("click", add_number)
     </script>
 </body>
 </html>
