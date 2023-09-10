@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form class="form-inline" >
+        <input type="text" id="first">
+        <label for="">+</label>
+        <input type="text" id="second">
+        <label for=""><button id="sum">=</button></label>
+        <label id="show"></label>
+
+    </form>
+    <script>
+        let sum = 0
+        const ans = document.getElementById("sum")
+        const first = document.getElementById("first")
+        const sec = document.getElementById("second")
+        const show = document.getElementById("show")
+        function add(){
+           sum += first
+           sum += sec 
+           show.append(sum)
+        }
+        ans.addEventListener("click", add)
+        
+    </script>
+</body>
+</html>
